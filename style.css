@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+}
+
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(131,58,180); /*#833ab4*/
+	background: linear-gradient(90deg, rgba(131,58,180,0.7486344879748774) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,0.6842087176667542) 100%);
+}
+
+.wrapper{
+	position: relative;
+	width: 200px;
+	height: 60px;
+}
+
+.wrapper button{
+	position: relative;
+	width:  100%;
+	height: 100%;
+	background-color: #fff;
+	text-transform: uppercase;
+	opacity: 1;
+   	-webkit-transition: opacity 0.3s 0.4s;
+    transition: opacity 0.3s 0.4s;
+    color: blue;
+}
+
+.wrapper.on button{
+ 	opacity: 0;
+  	-webkit-transition: opacity 0.1s;
+  	transition: opacity 0.1s;
+}
+
+.wrapper .pop_up{
+	overflow: hidden;
+	width: 200px;
+	height: 60px;
+	overflow: hidden;
+	opacity: 0;
+	z-index: -1;
+	background-color: #fff;
+	position: fixed;
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.wrapper.on .pop_up{
+	width:  350px;
+	height: 350px;
+	top:  30%;
+	left: 40%;
+	margin: -140px 0 0 -75px;
+	z-index: 333;
+	opacity: 1;
+	-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.wrapper .pop_up .pop_up_details{
+	position: relative;
+	height: 100%;
+	width:  100%;
+	opacity: 0;
+	background-color: #fff;
+}
+
+.wrapper.on .pop_up .pop_up_details{
+	-webkit-transition: opacity 0.2s 0.5s;
+	transition: opacity 0.2s 0.5s;
+	opacity: 1;
+	padding: 20px;
+}
+
+.wrapper .pop_up .pop_up_details .cross_mark{
+	position: absolute;
+	bottom: 35px;
+	right: 25px;
+	cursor: pointer;
+	background-color: red;
+}
+
+.wrapper .pop_up .pop_up_details .cross_mark::before{
+	position: absolute;
+	top:  0;
+	right:  0;
+	content: '';
+	height: 15px;
+	width:  2px;
+	display: block;
+	background-color: #333;
+	transform: rotate(45deg);
+}
+
+.wrapper .pop_up .pop_up_details .cross_mark::after{
+	position: absolute;
+	top:  0;
+	right:  0;
+	content: '';
+	height: 15px;
+	width:  2px;
+	display: block;
+	background-color: #333;
+	transform: rotate(-45deg);
+}
+
+form{
+	text-align: center;
+}
+
+form fieldset{
+	padding: 20px;
+	border: 3px solid blue;
+}
+
+form fieldset div{
+	margin-bottom: 15px;
+}
+
+form fieldset div label{
+	font-size: 0.8em;
+}
+
+form fieldset div input{
+	width: 90%;
+}
+
+form fieldset div input[type="submit"]{
+	width: 80%;
+	text-align: center;
+	background: none;
+	color: blue;
+	outline: none;
+	border: none;
+	text-decoration: underline;
+}
+
+form fieldset div span{
+	font-size: 0.8em;
+}
+
+form fieldset div a{
+	text-decoration: underline;
+	color: blue;
+}
